@@ -1,0 +1,14 @@
+{
+  "name": "pwa-examples",
+  "version": "1.0.0",
+  "description": "Progressive Web Apps Examples",
+  "author": "Vulcan Estudios Ltda. (vulcanst.co)",
+  "license": "MIT",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "express": "^4.15.0"
+  }
+}
