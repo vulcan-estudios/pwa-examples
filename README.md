@@ -20,6 +20,18 @@ Progressive Web Apps Examples.
 - [Promises](https://developers.google.com/web/fundamentals/getting-started/primers/promises)
 - [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API/Basic_Concepts_Behind_IndexedDB)
 
+## Install
+
+```bash
+$ npm install
+```
+
+## Run
+
+```bash
+$ npm run start
+```
+
 ## License
 
 [MIT](./LICENSE)
