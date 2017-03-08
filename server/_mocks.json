@@ -1,0 +1,62 @@
+{
+  "juices": [],
+  "cooks": [
+    {
+      "id": "c1",
+      "name": "María"
+    },
+    {
+      "id": "c2",
+      "name": "Pepe"
+    }
+  ],
+  "fruits": [
+    {
+      "id": "f1",
+      "name": "Apple",
+      "image": "/img/fruits/apple.png"
+    },
+    {
+      "id": "f2",
+      "name": "Orange",
+      "image": "/img/fruits/orange.png"
+    },
+    {
+      "id": "f3",
+      "name": "Banana",
+      "image": "/img/fruits/banana.png"
+    },
+    {
+      "id": "f4",
+      "name": "Grape",
+      "image": "/img/fruits/grape.png"
+    }
+  ],
+  "recipes": [
+    {
+      "id": "r1",
+      "name": "Banana Split",
+      "image": "/img/recipes/banana-split.png"
+    },
+    {
+      "id": "r2",
+      "name": "Apple Juice",
+      "image": "/img/recipes/apple-juice.png"
+    },
+    {
+      "id": "r3",
+      "name": "Orange Juice",
+      "image": "/img/recipes/orange-juice.png"
+    },
+    {
+      "id": "r4",
+      "name": "Wine",
+      "image": "/img/recipes/wine.png"
+    },
+    {
+      "id": "r5",
+      "name": "Fruits Juice",
+      "image": "/img/recipes/juice.png"
+    }
+  ]
+}

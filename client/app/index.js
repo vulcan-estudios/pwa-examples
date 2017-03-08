@@ -1,3 +1,18 @@
+import $ from 'jquery';
+import render from './render';
+
+window.$ = window.jQuery = $;
+
+render();
+
+/*const howler = require('howler');
+const blenderSound = new howler.Howl({
+  src: ['/sounds/blender.mp3']
+});
+$('body').on('click', function () {
+  blenderSound.stop().play();
+});*/
+
 /*
 // Registrar el Service Worker.
 if ('serviceWorker' in navigator) {
@@ -13,26 +28,3 @@ if ('serviceWorker' in navigator) {
   });
 }
 */
-
-/*
-<header class="header">
-  <div class="row column">
-    <img src="/img/icons/icon-256x256.png" alt="Logo">
-    <h1>Blender</h1>
-  </div>
-</header>
-<main class="main">
-  <div class="row column">
-    <div class="card">
-      <img src="" alt="">
-      <p></p>
-    </div>
-  </div>
-</main>
-<footer class="footer">
-  <div class="row column">
-    <img src="/img/vulcanbambi.png">
-    <p>VulcanBambi Studios</p>
-  </div>
-</footer>
- */

@@ -1,3 +1,3 @@
 #!/bin/bash
 
-touch server/database.json
+cp server/_mocks.json server/database.json

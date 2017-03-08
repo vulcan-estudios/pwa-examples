@@ -1,0 +1,48 @@
+.blender {
+  margin: 1rem 0;
+  text-align: center;
+
+  .progress {
+    margin: 1rem 0;
+  }
+  .blender__content {
+    display: block;
+    position: relative;
+  }
+  .blender__logo {
+    width: 300px;
+    max-width: 300px;
+  }
+  .blender__fruit {
+    position: absolute;
+    left: calc(50% - 40px);
+    top: 125px;
+    display: block;
+    margin: 0;
+    width: 100px;
+    width: 100px;
+    transition: all 250ms ease-out;
+  }
+  .blender__fruit1 {
+    animation: blenderFruit 400ms linear 0s infinite alternate;
+  }
+  .blender__fruit2 {
+    margin-top: 25px;
+    animation: blenderFruit 325ms linear 0s infinite alternate;
+  }
+  .blender__fruit3 {
+    margin-top: 50px;
+    animation: blenderFruit 250ms linear 0s infinite alternate;
+  }
+}
+
+@keyframes blenderFruit {
+  from {
+    margin-left: -30px;
+    transform: rotate(75deg);
+  }
+  to {
+    margin-left: 30px;
+    transform: rotate(-75deg);
+  }
+}

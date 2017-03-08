@@ -1,0 +1,39 @@
+.recipe {
+  display: block;
+  overflow: hidden;
+  border-top: 1px solid $medium-gray;
+  padding: 1rem;
+  width: 100%;
+
+  img {
+    display: block;
+    float: left;
+    height: 80px;
+    margin-right: 1rem;
+  }
+  p {
+    display: block;
+    margin: 0;
+    line-height: 40px;
+    font-size: 1.25rem;
+    color: #333;
+    vertical-align: middle;
+  }
+  button {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+  }
+
+  &:last-child {
+    border-bottom: 1px solid $medium-gray;
+  }
+
+  @include breakpoint(medium) {
+    p {
+      display: inline-block;
+      font-size: 2rem;
+      line-height: 80px;
+    }
+  }
+}
