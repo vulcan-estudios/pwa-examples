@@ -3,20 +3,25 @@ import classNames from 'classnames';
 
 export default function Recipe (props) {
 
-  const { className, children, ...rest } = props;
+  const { id, name, image, className, children, ...rest } = props;
   const cls = classNames('recipe', className);
 
   return (
-    <div className={cls} {...rest}>
-      <img src="/img/juices/banana-split.png" />
-      <p>Banana Split</p>
-      <button className="button small">Make</button>
+    <div className={cls} data-id={id} {...rest}>
+      <img src={image} />
+      <p>{name}</p>
+      <span className='recipe__children'>{children}</span>
     </div>
   );
 }
 
 Recipe.propTypes = {
-  children: PropTypes.any
+  id: PropTypes.string,
+  name: PropTypes.string,
+  image: PropTypes.string,
+  children: PropTypes.any,
 };
 
-Recipe.defaultProps = {};
+Recipe.defaultProps = {
+  name: 'Unknown',
+};

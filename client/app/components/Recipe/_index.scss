@@ -19,7 +19,10 @@
     color: #333;
     vertical-align: middle;
   }
-  button {
+  .button {
+    margin: 0;
+  }
+  .recipe__children {
     display: inline-block;
     margin: 0;
     vertical-align: middle;
@@ -34,6 +37,9 @@
       display: inline-block;
       font-size: 2rem;
       line-height: 80px;
+    }
+    .recipe__children {
+      margin: 0 0 0 1rem;
     }
   }
 }

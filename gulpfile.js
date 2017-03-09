@@ -25,7 +25,8 @@ const settings = {
     ],
     includePaths: [
       './',
-      './node_modules/foundation-sites/scss'
+      './node_modules/foundation-sites/scss',
+      './node_modules'
     ],
     output: './public/css',
   }

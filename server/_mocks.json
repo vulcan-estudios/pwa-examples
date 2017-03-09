@@ -1,5 +1,18 @@
 {
-  "juices": [],
+  "juices": [
+    {
+      "id": "j1",
+      "cook": "c2",
+      "recipe": "r2",
+      "date": 1488326400000
+    },
+    {
+      "id": "j2",
+      "cook": "c1",
+      "recipe": "r4",
+      "date": 1488585600000
+    }
+  ],
   "cooks": [
     {
       "id": "c1",

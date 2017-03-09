@@ -2,6 +2,7 @@
 @import 'foundation';
 @import 'util/util';
 @import 'global';
+@import 'react-select/scss/default';
 
 @include foundation-global-styles;
 @include foundation-flex-grid;
