@@ -49,27 +49,45 @@
     {
       "id": "r1",
       "name": "Banana Split",
-      "image": "/img/recipes/banana-split.png"
+      "image": "/img/recipes/banana-split.png",
+      "fruits": [
+        "f3"
+      ]
     },
     {
       "id": "r2",
       "name": "Apple Juice",
-      "image": "/img/recipes/apple-juice.png"
+      "image": "/img/recipes/apple-juice.png",
+      "fruits": [
+        "f1"
+      ]
     },
     {
       "id": "r3",
       "name": "Orange Juice",
-      "image": "/img/recipes/orange-juice.png"
+      "image": "/img/recipes/orange-juice.png",
+      "fruits": [
+        "f2"
+      ]
     },
     {
       "id": "r4",
       "name": "Wine",
-      "image": "/img/recipes/wine.png"
+      "image": "/img/recipes/wine.png",
+      "fruits": [
+        "f4"
+      ]
     },
     {
       "id": "r5",
       "name": "Fruits Juice",
-      "image": "/img/recipes/juice.png"
+      "image": "/img/recipes/juice.png",
+      "fruits": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
     }
   ]
 }

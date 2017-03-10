@@ -7,6 +7,20 @@ export const selectUser = (data) => {
   };
 };
 
+export const setCurrent = (data) => {
+  return {
+    type: ACTIONS.APP_CURRENT,
+    payload: data
+  };
+};
+
+export const updateProgress = (data = 0) => {
+  return {
+    type: ACTIONS.APP_PROGRESS,
+    payload: Math.min(Math.max(Number(data), 0), 100)
+  };
+};
+
 export const loading = (data = false) => {
   return {
     type: ACTIONS.APP_LOADING,

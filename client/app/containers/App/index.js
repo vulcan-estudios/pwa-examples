@@ -3,6 +3,7 @@ import Halogen from 'halogen';
 import Select from 'react-select';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
+import howler from 'howler';
 
 import { DESIGN } from 'client/app/settings';
 import { selectUser, getGeneral } from 'client/app/actions';
@@ -27,7 +28,15 @@ class AppContainer extends Component {
   }
 
   componentDidMount () {
+
     this.props.getGeneral();
+
+    const ambience = new howler.Howl({
+      src: ['/sounds/ambience.mp3'],
+      loop: true,
+      volume: 0.25,
+    });
+    ambience.stop().play();
   }
 
   render () {

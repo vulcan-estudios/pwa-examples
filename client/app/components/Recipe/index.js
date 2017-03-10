@@ -3,7 +3,7 @@ import classNames from 'classnames';
 
 export default function Recipe (props) {
 
-  const { id, name, image, className, children, ...rest } = props;
+  const { id, name, image, fruits, className, children, ...rest } = props;
   const cls = classNames('recipe', className);
 
   return (

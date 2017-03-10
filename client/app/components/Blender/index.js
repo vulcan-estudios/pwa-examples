@@ -3,29 +3,63 @@ import classNames from 'classnames';
 
 export default function Blender (props) {
 
-  const { className, children, ...rest } = props;
-  const cls = classNames('blender', className);
+  const { progress, isOn, fruits, recipe, className, children, ...rest } = props;
+  const cls = classNames('blender', {
+    'blender--on': isOn,
+  }, className);
+
+  const status = isOn ? '/img/blender/blender-on.png' : '/img/blender/blender.png';
+
+  const fruitsElements = fruits.map((fruit, index) => (
+    <img
+      key={index}
+      className={`blender__fruit blender__fruit${index}`}
+      src={fruit.image}
+      alt={fruit.name}
+    />
+  ));
+
+  const progressStyle = {
+    width: Math.round(progress) + '%',
+  };
+
+  const { name: recipeName } = recipe;
 
   return (
     <div className={cls} {...rest}>
       <div className="row column">
         <div className="blender__content">
-          <img className="blender__logo" src="/img/blender/blender-on.png" />
-          <img className="blender__fruit blender__fruit1" src="/img/fruits/banana.png" />
-          <img className="blender__fruit blender__fruit3" src="/img/fruits/apple.png" />
-          <img className="blender__fruit blender__fruit2" src="/img/fruits/orange.png" />
-          <img className="blender__fruit blender__fruit4" src="/img/fruits/grape.png" />
+          <img className="blender__logo" src={status} />
+          {fruitsElements}
         </div>
         <div className="progress" role="progressbar">
-          <div className="progress-meter" style="width: 70%"></div>
+          <div className="progress-meter" style={progressStyle}></div>
         </div>
+        <span>Preparing {recipeName}</span>
       </div>
+      {children}
     </div>
   );
 }
 
 Blender.propTypes = {
-  children: PropTypes.any
+  progress: PropTypes.number,
+  isOn: PropTypes.bool,
+  fruits: PropTypes.arrayOf(PropTypes.shape({
+    name: PropTypes.string,
+    image: PropTypes.string,
+  })),
+  recipe: PropTypes.shape({
+    name: PropTypes.string,
+  }),
+  children: PropTypes.any,
 };
 
-Blender.defaultProps = {};
+Blender.defaultProps = {
+  progress: 0,
+  isOn: false,
+  fruits: [],
+  recipe: {
+    name: 'Unknown',
+  },
+};
