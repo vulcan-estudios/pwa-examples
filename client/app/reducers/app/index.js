@@ -3,9 +3,9 @@ import { ACTIONS } from 'client/app/consts';
 const initial = {
   user: null,
   current: null,
-  progress: 0,
   error: null,
   isLoading: false,
+  notification: null,
 };
 
 export default function reducer (state = initial, action) {
@@ -21,9 +21,9 @@ export default function reducer (state = initial, action) {
       return { ...state, current };
     }
 
-    case ACTIONS.APP_PROGRESS: {
-      const progress = action.payload;
-      return { ...state, progress };
+    case ACTIONS.APP_NOTIFICATION: {
+      const notification = action.payload;
+      return { ...state, notification };
     }
 
     case ACTIONS.APP_LOADING: {

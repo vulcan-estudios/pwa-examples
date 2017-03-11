@@ -3,6 +3,7 @@
 @import 'util/util';
 @import 'global';
 @import 'react-select/scss/default';
+@import './design/s-alert';
 
 @include foundation-global-styles;
 @include foundation-flex-grid;

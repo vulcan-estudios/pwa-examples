@@ -8,7 +8,11 @@ export default function Blender (props) {
     'blender--on': isOn,
   }, className);
 
+  const { name: recipeName } = recipe;
   const status = isOn ? '/img/blender/blender-on.png' : '/img/blender/blender.png';
+  const progressStyle = {
+    width: Math.round(progress) + '%',
+  };
 
   const fruitsElements = fruits.map((fruit, index) => (
     <img
@@ -18,12 +22,6 @@ export default function Blender (props) {
       alt={fruit.name}
     />
   ));
-
-  const progressStyle = {
-    width: Math.round(progress) + '%',
-  };
-
-  const { name: recipeName } = recipe;
 
   return (
     <div className={cls} {...rest}>
@@ -35,7 +33,7 @@ export default function Blender (props) {
         <div className="progress" role="progressbar">
           <div className="progress-meter" style={progressStyle}></div>
         </div>
-        <span>Preparing {recipeName}</span>
+        <span>{ isOn ? 'Preparing' : 'Prepare' } {recipeName}</span>
       </div>
       {children}
     </div>

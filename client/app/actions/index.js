@@ -1,4 +1,8 @@
+import howler from 'howler';
 import { ACTIONS } from 'client/app/consts';
+
+const AUDIO_DURATION = 15000;
+const INTERVAL = 1000;
 
 export const selectUser = (data) => {
   return {
@@ -7,17 +11,17 @@ export const selectUser = (data) => {
   };
 };
 
-export const setCurrent = (data) => {
+export const updateCurrent = (data) => {
   return {
     type: ACTIONS.APP_CURRENT,
     payload: data
   };
 };
 
-export const updateProgress = (data = 0) => {
+export const updateNotification = (data) => {
   return {
-    type: ACTIONS.APP_PROGRESS,
-    payload: Math.min(Math.max(Number(data), 0), 100)
+    type: ACTIONS.APP_NOTIFICATION,
+    payload: data
   };
 };
 
@@ -115,6 +119,72 @@ export const getJuices = () => (dispatch, getState) => {
 export const postJuice = (newItem) => (dispatch, getState) => {
   $.post('/api/juices', newItem).
   then(item => {
+
+    const { cooks } = getState();
+    const cook = cooks.find(_cook => _cook.id === item.cook);
+    const { name: cookName } = cook || {};
+
     dispatch(addJuice(item));
+    dispatch(updateNotification({
+      title: 'New Juice!',
+      content: `A new juice has been added by ${cookName}.`,
+    }));
   });
+};
+
+export const stopBlending = () => (dispatch, getState) => {
+
+  const { app } = getState();
+  const { interval, audio } = app.current || {};
+
+  clearInterval(interval);
+
+  if (audio) {
+    audio.stop();
+  }
+
+  dispatch(updateCurrent(null));
+  dispatch(updateNotification(null));
+};
+
+export const startBlending = ({ recipeId, cookId }) => (dispatch, getState) => {
+
+  dispatch(stopBlending());
+
+  const interval = setInterval(() => {
+
+    const { app } = getState();
+    const { progress = 0, duration = 0 } = app.current;
+
+    if (progress >= 100) {
+      dispatch(stopBlending());
+      dispatch(postJuice({
+         recipe: recipeId,
+         cook: cookId,
+      }));
+    }
+    else {
+      const newDuration = duration + INTERVAL;
+      const newProgress = Math.round((newDuration / AUDIO_DURATION) * 100);
+
+      dispatch(updateCurrent({
+        ...app.current,
+        duration: newDuration,
+        progress: newProgress,
+      }));
+    }
+  }, INTERVAL);
+
+  const audio = new howler.Howl({
+    src: ['/sounds/blender.mp3'],
+    volume: 0.5,
+  });
+  audio.stop().play();
+
+  dispatch(updateCurrent({
+    recipeId,
+    cookId,
+    interval,
+    audio,
+  }));
 };
