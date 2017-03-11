@@ -9,7 +9,8 @@
     "build": "npm run build-css && npm run build-js",
     "build:production": "NODE_ENV=production npm run build-css && NODE_ENV=production npm run build-js",
     "build-css": "gulp sass",
-    "build-js": "webpack"
+    "build-js": "webpack",
+    "postinstall": "npm run setup && npm run build:production"
   },
   "dependencies": {
     "autoprefixer": "^6.7.6",
