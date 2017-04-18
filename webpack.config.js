@@ -20,7 +20,7 @@ if (!dev) {
 module.exports = {
   entry: {
     'app': './client/app/index.js',
-    'worker': './client/worker/index.js'
+    'ws': './client/ws/index.js'
   },
   output: {
     path: './public/',

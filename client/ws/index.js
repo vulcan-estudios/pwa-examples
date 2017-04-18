@@ -12,6 +12,7 @@ const SCOPE = 'vulcanbambi';
 // Se definen archivos a guardar en cache.
 const filesToCache = [
   '/',
+  '/index.html',
   '/favicon.ico',
   '/manifest.json',
   '/css/app.css',
