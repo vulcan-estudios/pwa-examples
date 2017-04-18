@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static(`${process.cwd()}/public`));
 
-app.use('/ws.js', function (req, res, next) {
+app.use('/sw.js', function (req, res, next) {
   res.header('Cache-Control', 'no-cache, no-store, must-revalidate'); // HTTP 1.1.
   res.header('Pragma', 'no-cache'); // HTTP 1.0.
   res.header('Expires', '0'); // Proxies.
