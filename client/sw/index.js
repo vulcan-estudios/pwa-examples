@@ -1,4 +1,4 @@
-// Revisión 001
+// Revisión 002
 // Para actualizar las funcionalidades del Service Worker, hay que actualizar
 // este archivo. Puede ser un cambio en un comentario.
 

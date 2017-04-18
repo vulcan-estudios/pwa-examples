@@ -10,7 +10,7 @@ export default function Header (props) {
     <header className={cls} {...rest}>
       <div className="row column">
         <img src="/img/icons/icon-256x256.png" alt="Logo" />
-        <h1>Blender</h1>
+        <h1>Blender™</h1>
       </div>
     </header>
   );
