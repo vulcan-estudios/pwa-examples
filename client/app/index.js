@@ -5,20 +5,11 @@ window.$ = window.jQuery = $;
 
 render();
 
-/*const howler = require('howler');
-const blenderSound = new howler.Howl({
-  src: ['/sounds/blender.mp3']
-});
-$('body').on('click', function () {
-  blenderSound.stop().play();
-});*/
-
-/*
 // Registrar el Service Worker.
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {
     navigator.serviceWorker.
-      register('/sw.js').
+      register('/worker.js').
       then(function (registration) {
         console.log('ServiceWorker registration successful with scope: ', registration.scope);
       }).
@@ -27,4 +18,3 @@ if ('serviceWorker' in navigator) {
       });
   });
 }
-*/

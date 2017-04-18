@@ -1,4 +1,4 @@
-// Revisión 007
+// Revisión 001
 // Para actualizar las funcionalidades del Service Worker, hay que actualizar
 // este archivo. Puede ser un cambio en un comentario.
 
@@ -11,26 +11,16 @@ const SCOPE = 'vulcanbambi';
 
 // Se definen archivos a guardar en cache.
 const filesToCache = [
-
-  // HTML
   '/',
-  '/index.html',
-
-  // CSS
-  '/css/foundation.min.css',
-  '/css/app.css',
-
-  // JS
-  '/js/app.js',
-
-  // IMAGES
   '/favicon.ico',
+  '/manifest.json',
+  '/css/app.css',
+  '/app.js',
+  '/fonts/roboto-latin.woff2',
+  '/sounds/ambience.mp3',
   '/img/icons/icon-256x256.png',
-  '/img/photos/junca.jpg',
-  '/img/photos/sergio.jpeg',
-  '/img/photos/ivan.jpg',
-  '/img/photos/jose.jpg',
-  '/img/photos/romel.jpg'
+  '/img/vulcanbambi.png',
+  '/img/fruit.png'
 ];
 
 // Cuando el worker se vaya a instalar. O cuando se trate de actualizar.
