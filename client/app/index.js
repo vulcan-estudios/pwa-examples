@@ -9,7 +9,7 @@ render();
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function () {
     navigator.serviceWorker.
-      register('/ws.js').
+      register('/sw.js').
       then(function (registration) {
         console.log('ServiceWorker registration successful with scope: ', registration.scope);
       }).
